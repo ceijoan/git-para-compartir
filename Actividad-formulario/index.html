@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Formularios</title>
+    <script src="https://kit.fontawesome.com/c1588bce38.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #000;
+            display:flex;
+            flex-direction: column;
+        }
+        h1{
+            text-align: center;
+            margin: 20px 0;
+        }
+        h2{
+            text-align: left;
+            margin: 10px 0;
+        }
+        .container{
+            width: 800px;
+            margin: 10px auto;
+            padding: 10px 20px 20px;
+            border: 2px solid #000;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            flex: 1 0;
+            gap: 20px;
+            
+        }
+        input[type=text], input[type=email], input[type=password], input[type=date], select, textarea, input[type=number]{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input.numero{
+            width: 75px!important;
+        }
+        input[type=checkbox] {
+            position: relative;
+            cursor: pointer;
+            margin-left: 20px;
+            width: 0;
+            
+        }
+        input[type=checkbox]:before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: -3px;
+            left: -20px;
+            border: 2px solid #555555;
+            border-radius: 3px;
+            background-color: white;
+        }
+        input[type=checkbox]:checked:after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 0;
+            left: -14px;
+        }
+        .lista-products{
+            padding: 10px;
+        }
+        .lista-products ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        .lista-products ul li{
+            text-align: center;
+            border: 1px solid gray;
+            box-shadow: 5px 3px 10px #000;
+            margin: 20px;
+        }
+        .lista-products ul li img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Actividad 6  Formularios</h1>
+    <div class="container">
+        <h2>Registro usuario</h2>
+        <form action="https://ecampus.rocks/test-forms.php" method="GET">
+            <label>
+                Nombre
+                <input type="text" name="Nombre" placeholder="Nombre de usuario">
+            </label>
+            <label>
+                Correo electrónico
+                <input type="email" name="email" placeholder="email" required>
+            </label>
+            <label>
+                Contraseña
+                <input type="password" name="password" placeholder="Contraseña">
+            </label>
+            <label>
+                País
+                <select name="pais" id="">
+                    <option value="" selected>Seleccione un país</option>
+                    <option value="opcion1">España</option>
+                    <option value="opcion2">Portugal</option>
+                    <option value="opcion3">Francia</option>
+                </select>
+            </label>
+            <label>
+                Fecha de nacimiento
+                <input type="date" name="fecha-nacimiento">
+            </label>
+            <label>
+            <input name="tyc" type="checkbox" value="acepto-terminos-y-condiciones" required>
+            Acepto<a href=""> Terminos y condiciones</a></label>
+
+            <button type="submit" name="">Enviar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Formulario de contacto</h2>
+        <form action="https://ecampus.rocks/test-forms.php" method="GET">
+            <label>
+                Nombre
+                <input type="text" name="Nombre" placeholder="Nombre de usuario">
+            </label>
+            <label>
+                Correo electrónico
+                <input type="email" name="email" placeholder="email" required>
+            </label>
+            <label>
+                Asunto
+                <textarea name="text-asunto" id="" required></textarea>
+            </label>
+
+            <button type="submit" name="">Contactar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Formulario de Pedido de producto</h2>
+        <form action="https://ecampus.rocks/test-forms.php" method="GET">
+            <label>
+                Nombre Completo
+                <input type="text" name="Nombre-completo" placeholder="Nombre de usuario completo">
+            </label>
+            <label>
+                Dirección de envio
+                <input type="text" name="direccion" placeholder="" >
+            </label>
+            <label>
+                Código Postal
+                <input type="number" name="cod-postal" placeholder=" " required>
+            </label>
+            <label>
+                País
+                <select name="pais" id="">
+                    <option value="" selected>Seleccione un país</option>
+                    <option value="opcion1">España</option>
+                    <option value="opcion2">Portugal</option>
+                    <option value="opcion3">Francia</option>
+                </select>
+            </label>
+            <label>
+                Ciudad
+                <select name="ciudad" id="">
+                    <option value="" selected>Seleccione ciudad</option>
+                    <optgroup label="España">
+                        <option value="opcion1">Valencia</option>
+                        <option value="opcion2">Barcelona</option>
+                        <option value="opcion3">Madrid</option>
+                    </optgroup>
+                    <optgroup label="Portugal">
+                        <option value="opcion1">Lisboa</option>
+                        <option value="opcion2">Oporto</option>
+                        <option value="opcion3">Évora</option>
+                    </optgroup>
+                    <optgroup label="Francia">
+                        <option value="opcion1">Paris</option>
+                        <option value="opcion2">Marsella</option>
+                        <option value="opcion3">Lyon</option>
+                    </optgroup>
+                    
+                </select>
+            </label>
+            <div class="lista-products">
+                <h3>Lista de productos</h3>
+                <ul>
+                    <li>
+                        <img src="https://picsum.photos/80/80" alt="producto1">
+                        <p>Descripcion del producto que puede tener un texto como este o mas largo</p>
+                        <input name="productos" type="checkbox" value="producto1">Producto 1
+                        <div class="cantidad">
+                            Cantidad
+                            <input name="cantidad" class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                    </li>    
+                    <li>
+                        <img src="https://picsum.photos/80/80" alt="producto1">
+                        <p>Descripcion del producto que puede tener un texto como este o mas largo</p>
+                        <input name="productos" type="checkbox" value="producto2">Producto 2
+                        <div class="cantidad">
+                            Cantidad
+                            <input name="cantidad" class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://picsum.photos/80/80" alt="producto1">
+                        <p>Descripcion del producto que puede tener un texto como este o mas largo</p>
+                        <input name="productos" type="checkbox" value="producto3">Producto 3
+                        <div class="cantidad">
+                            Cantidad
+                            <input name="cantidad" class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <label>
+                Teléfono
+                <input type="number" maxlength="10">
+            </label>
+            <div class="metodo-pago">
+                <i class="fa-solid fa-credit-card"></i> <input type="radio" name="metodo-pago" value="t-credito"> Tarjeta de credito
+                <i class="fa-solid fa-money-bill"></i><input type="radio" name="metodo-pago" value="efectivo"> Efectivo
+                <i class="fa-regular fa-credit-card"></i><input type="radio" name="metodo-pago" value="t-debito"> Tarjeta debito
+            </div>
+            
+            <button type="submit" name="">Comprar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Formulario de reserva de Hotel</h2>
+        <form action="https://ecampus.rocks/test-forms.php" method="GET">
+            <label>
+                Nombre
+                <input type="text" name="Nombre" placeholder="Nombre">
+            </label>
+            <label>
+                Correo electrónico
+                <input type="email" name="email" placeholder="email" required>
+            </label>
+            <label>
+                Teléfono
+                <input type="number" maxlength="10">
+            </label>
+            <label>
+                Fecha de llegada
+                <input type="date" name="fecha-llegada" required>
+            </label>
+            <label>
+                Fecha de Salida
+                <input type="date" name="fecha-salida"required>
+            </label>
+            <div class="tipos-habitacion">
+                <h3>Tipos de habitacion</h3>
+                <ul>
+                    <li>
+                        <input name="habitaciones" type="radio" value="Habitacion 1">
+                        <i class="fa-solid fa-bed"></i>
+                        <div class="cantidad">
+                            Cantidad de huespedes
+                            <input class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                        <div class="cantidad">
+                            Adicionales
+                            <textarea name="Adicionales" name="adicionales" id="" placeholder="Describir información adicional que desea agregar en su orden"></textarea>
+                        </div>
+                    </li>    
+                    <li>
+                        <input name="habitaciones" type="radio" value="Habitacion 2">
+                        <i class="fa-solid fa-bed"></i><i class="fa-solid fa-bed"></i>
+                        <div class="cantidad">
+                            Cantidad de huespedes
+                            <input class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                        <div class="cantidad">
+                            Adicionales
+                            <textarea name="Adicionales" name="adicionales" id="" placeholder="Describir información adicional que desea agregar en su orden"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <input name="habitaciones" type="radio" value="Habitacion 1">
+                        <i class="fa-solid fa-bed"></i><i class="fa-solid fa-bed"></i><i class="fa-solid fa-bed"></i>
+                        <div class="cantidad">
+                            Cantidad de huespedes
+                            <input class="numero" type="number" max="100" min="1" step="1">
+                        </div>
+                        <div class="cantidad">
+                            Adicionales
+                            <textarea name="Adicionales" name="adicionales" id="" placeholder="Describir información adicional que desea agregar en su orden"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" name="">Reservar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Comentarios de Producto</h2>
+        <form action="https://ecampus.rocks/test-forms.php" method="GET">
+            <label>
+                Nombre
+                <input type="text" name="Nombre" placeholder="Nombre de usuario">
+            </label>
+            <label>
+                Correo electrónico
+                <input type="email" name="email" placeholder="email" required>
+            </label>
+            <label>
+                Calificación
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </label>
+            <label>
+                Comentario
+                <textarea name="Adicionales" name="adicionales" id="" placeholder="Describir información adicional que desea agregar en su orden"></textarea>
+            </label>
+
+            <button type="submit" name="">Dejar comentario</button>
+        </form>
+    </div>
+</body>
+</html>
